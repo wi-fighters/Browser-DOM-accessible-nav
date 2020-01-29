@@ -1,54 +1,23 @@
-# Generate a menu programmatically
+# Accessible nav drawer
 
-## Aim for this structure within your `body` element:
+## Which ARIA attributes are we using for this example?
 
-```html
-<header>
-    <ul>
-        <li><a href="#home"></a></li>
-        <li><a href="#about"></a></li>
-        <li><a href="#services"></a></li>
-        <li><a href="#products"></a></li>
-        <li><a href="#newsletter"></a></li>
-        <li><a href="#contact"></a></li>
-    </ul>
-</header>
-```
+### `aria-controls` 
+- Give this attribute to the button (the element which emits the event).
+- Its value should match the `id` of the element that is changed when the event happens.
 
-## For DOM Manipulation, ask yourself:
+### `aria-expanded`
+- You can choose where to place this attribute. First, try placing it on the same button as above. If that makes other parts of your code difficult, it's ok to place it on the element being affected instead.
 
-WHAT do we need to target?
-- the closest existing parent element
+## Why use ARIA attributes?
 
-HOW will it change?
-a. it's going to get a new child element... (e.g. header)
-b. ... that child element is going to contain the structure for its children
+- We need to explicitly declare the relationship between a button and the element that it controls.
 
-WHEN should it change?
-(Don't worry about this until we cover Events in class)
+- When we change things on the DOM, we need to notify the screen readers because not everybody is able to see visual changes. We do this by modifying the `aria-expanded` attribute.
 
-## A guideline for how to break down this problem...
+## What other benefits do they provide?
 
-### QUERY the document
+Representing the state of the menu in one place only gives many advantages:
 
-- grab all the sections
-- destructure them into arrays so we can use array methods
-- map over them and store their ids in a new array
-- use the ids to derive href values
-- use the number of ids to count how many lis we should add
-
-### CREATE elements
-
-- Inside the body, create a header.
-- Inside the header, create a ul
-- Inside the ul, create many li
-- Inside each li, create an a
-- Give each a an href attribute with a string that matches section IDs
-
-### PREPEND the elements to the document
-
-## YOUR TASK
-
-- study the code provided
-- challenge yourself to build something similar without looking, to be sure you understand how it's working
-- resolve the TODO comments in `script.js`
+- One source of truth: easier maintenance / debugging
+- Cleaner code: We can use an attribute selector in CSS, so we don't need to clutter the HTML with classes
