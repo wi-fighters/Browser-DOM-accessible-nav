@@ -8,7 +8,7 @@ ul {
     transition: 0.5s ease-out;
 }
 
-.expanded {
+[aria-expanded=true]+#main-menu {
     transform: translateX(0%);
     background: yellowgreen;
 }
