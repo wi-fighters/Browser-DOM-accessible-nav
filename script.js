@@ -13,38 +13,12 @@
 
             //  expand it:
             // change it visually by changing the aria-expanded attribute
-
-            console.log('UL is expanded!');
-            console.log('Before:');
-            console.log(this.getAttribute('aria-expanded'));
-            console.log(typeof this.getAttribute('aria-expanded'));
-
             this.setAttribute('aria-expanded', 'false');
 
-            console.log("...and now it's not!");
-            console.log('After:');
-            console.log(this.getAttribute('aria-expanded'));
-            console.log(typeof this.getAttribute('aria-expanded'));
-
-
         } else {
-
-
             // collapse it:
             // change it visually by changing the aria-expanded attribute
-
-            console.log('UL is not expanded!');
-            console.log('Before:');
-            console.log(this.getAttribute('aria-expanded'));
-            console.log(typeof this.getAttribute('aria-expanded'));
-
             this.setAttribute('aria-expanded', 'true');
-
-            console.log('...and now it is!');
-            console.log('After:');
-            console.log(this.getAttribute('aria-expanded'));
-            console.log(typeof this.getAttribute('aria-expanded'));
-
         }
     };
 
