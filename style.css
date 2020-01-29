@@ -1,3 +1,14 @@
 html {
     scroll-behavior: smooth;
 }
+
+ul {
+    background: palevioletred;
+    transform: translateX(200%);
+    transition: 0.5s ease-out;
+}
+
+.expanded {
+    transform: translateX(0%);
+    background: yellowgreen;
+}
