@@ -7,23 +7,44 @@
     const openMenu = function() {
 
         // if ul is expanded
-        console.log(this.getAttribute('aria-expanded'));
-        console.log(typeof this.getAttribute('aria-expanded'));
-        
-        // TODO: Maybe this condition could be easier to read
-        // we're testing three possible states of aria-expanded
-        if (this.getAttribute('aria-expanded') && this.getAttribute('aria-expanded') !== 'false') {
-            console.log("The program thinks the UL is expanded!");
+        // I know it looks weird, but we need to test for a string that's equal to true
+        // aria-expanded will either have 'true' or 'false' as string values
+        if (this.getAttribute('aria-expanded') === 'true') {
+
             //  expand it:
-
             // change it visually by changing the aria-expanded attribute
+
+            console.log('UL is expanded!');
+            console.log('Before:');
+            console.log(this.getAttribute('aria-expanded'));
+            console.log(typeof this.getAttribute('aria-expanded'));
+
             this.setAttribute('aria-expanded', 'false');
-        } else {
-            console.log("The program thinks the UL is collapsed!");
-            // collapse it:
 
+            console.log("...and now it's not!");
+            console.log('After:');
+            console.log(this.getAttribute('aria-expanded'));
+            console.log(typeof this.getAttribute('aria-expanded'));
+
+
+        } else {
+
+
+            // collapse it:
             // change it visually by changing the aria-expanded attribute
+
+            console.log('UL is not expanded!');
+            console.log('Before:');
+            console.log(this.getAttribute('aria-expanded'));
+            console.log(typeof this.getAttribute('aria-expanded'));
+
             this.setAttribute('aria-expanded', 'true');
+
+            console.log('...and now it is!');
+            console.log('After:');
+            console.log(this.getAttribute('aria-expanded'));
+            console.log(typeof this.getAttribute('aria-expanded'));
+
         }
     };
 
