@@ -1,5 +1,7 @@
 # Accessible nav drawer
 
+Accessible Rich Internet Applications (ARIA) attributes help make our code accessible for people with impaired vision. As with most accessibility measures, they also come with bonus benefits.
+
 ## Which ARIA attributes are we using for this example?
 
 ### `aria-controls` 
@@ -21,3 +23,9 @@ Representing the state of the menu in one place only gives many advantages:
 
 - One source of truth: easier maintenance / debugging
 - Cleaner code: We can use an attribute selector in CSS, so we don't need to clutter the HTML with classes
+
+## Ok, I'm in love. What else can I do with ARIA attributes?
+
+Guides for humans: [The A11y project](https://a11yproject.com/)
+
+Specs for nerds: [WAI-ARIA specification: Supported states and properties](https://www.w3.org/TR/wai-aria-1.0/states_and_properties) (See all the available attributes, and **Ctrl+F** for a guide on how to use each one)
